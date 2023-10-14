@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Генератор рандомных символов</title>
+</head>
+<body>
+  <script>
+    const generateRandomCharacters = () => {
+      const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      const randomCharacters = Array(10).fill(null).map(() => characters.charAt(Math.floor(Math.random() * characters.length)));
+      return randomCharacters.join("");
+    };
+
+    const updateCharacters = () => {
+      const characters = generateRandomCharacters();
+      document.querySelector(".characters").textContent = characters;
+    };
+
+    setInterval(updateCharacters, 60000); // генерируем новые символы раз в минуту
+  </script>
+  <div class="characters">
+    <p>Сгенерированные символы:</p>
+    <p id="characters"></p>
+  </div>
+</body>
+</html>
