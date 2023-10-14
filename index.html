@@ -8,7 +8,7 @@
   <script>
     const generateRandomCharacters = () => {
       const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-      const randomCharacters = Array(5).fill(null).map(() => characters.charAt(Math.floor(Math.random() * characters.length)));
+      const randomCharacters = Array(10).fill(null).map(() => characters.charAt(Math.floor(Math.random() * characters.length)));
       return randomCharacters.join("");
     };
 
@@ -20,8 +20,7 @@
     setInterval(updateCharacters, 60000); // генерируем новые символы раз в минуту
   </script>
   <div class="characters">
-    <p>generateRandomCharacters</p>
-    <p id="characters"></p>
+    <pre id="characters"></pre>
   </div>
 </body>
 </html>
